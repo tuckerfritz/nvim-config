@@ -10,11 +10,6 @@ vim.opt.softtabstop = 2
 -- use number of spaces to insert a <Tab>
 vim.opt.expandtab = true
 
--- configure key mappings
-vim.g.mapleader = " "
-
-vim.keymap.set("n", "<leader>w", ":write<CR>", { noremap = true, silent = true })
-
 -- enable the system clipboard
 vim.opt.clipboard = "unnamedplus"
 

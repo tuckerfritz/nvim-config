@@ -1,1 +1,4 @@
-vim.keymap.set("n", "<leader>w", ":write<CR>", { noremap = true, silent = true })
+-- configure key mappings
+vim.g.mapleader = " "
+
+vim.keymap.set("n", "<leader>w", ":write<CR>", { silent = true })
