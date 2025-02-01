@@ -14,6 +14,22 @@ return {
       },
     },
   },
+  config = function(_, opts)
+    require("nvim-tree").setup(opts)
+    -- Keybindings to navigate between nvim-tree and the buffer
+    vim.api.nvim_set_keymap(
+      'n', 
+      '<C-h>', 
+      '<cmd>lua require("nvim-tree.api").tree.focus()<CR>', 
+      { noremap = true, silent = true 
+    })
+    vim.api.nvim_set_keymap(
+      'n', 
+      '<C-l>', 
+      '<cmd>lua if vim.bo.filetype == "NvimTree" then vim.cmd("wincmd l") end<CR>', 
+      { noremap = true, silent = true
+    })
+  end,
   keys = {
     { "<leader>e", ":NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
   },
