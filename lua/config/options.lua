@@ -17,3 +17,6 @@ vim.keymap.set("n", "<leader>w", ":write<CR>", { noremap = true, silent = true }
 
 -- enable the system clipboard
 vim.opt.clipboard = "unnamedplus"
+
+-- enable full color support
+vim.opt.termguicolors = true

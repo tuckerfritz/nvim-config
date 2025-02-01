@@ -1,19 +1,20 @@
 return {
   "nvim-tree/nvim-tree.lua",
+  lazy = false,
   dependencies = { "nvim-tree/nvim-web-devicons" },
   opts = {
-    view = { width = 30 },
-    update_focused_file = { enable = true },
+    view = { 
+      width = 30,
+      side = "left"
+    },
     actions = {
       open_file = {
-        quit_on_open = false, -- Keep NvimTree open
-        resize_window = true,
-        window_picker = { enable = false }, -- Open files in new buffers
+        quit_on_open = false,
+        resize_window = true
       },
     },
   },
   keys = {
     { "<leader>e", ":NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
-  }
+  },
 }
-

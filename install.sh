@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 mkdir -p ~/.config/nvim
-cp -a . ~/.config/nvim
+rsync -av --exclude='.git' --exclude='install.sh' . ~/.config/nvim
