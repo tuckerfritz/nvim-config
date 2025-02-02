@@ -2,11 +2,13 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
 			local lspconfig = require("lspconfig")
 
 			-- Configure pyright
 			lspconfig.pyright.setup({
 				cmd = { "pyright-langserver", "--stdio" },
+				capabilities = capabilities,
 				filetypes = { "python" },
 				root_dir = lspconfig.util.root_pattern(".git", "pyproject.toml", "setup.py"),
 				settings = {
