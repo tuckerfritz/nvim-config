@@ -17,6 +17,10 @@ return {
 					padding = 1,
 				},
 			},
+      close_command = function(bufnum)
+        local bd = require("bufdelete").bufdelete
+        bd(bufnum, false)
+      end
 		},
 	},
 	keys = {
@@ -25,23 +29,9 @@ return {
 		{
 			"<leader>bc",
 			function()
-				local bd = require("bufdelete")
-				-- Get the total number of listed buffers
-				local listed_buffers = vim.tbl_filter(function(buf)
-					return vim.bo[buf].buflisted and vim.api.nvim_buf_get_name(buf) ~= ""
-				end, vim.api.nvim_list_bufs())
-
-				-- If this is the last buffer, close everything
-				if #listed_buffers <= 1 then
-					if require("nvim-tree.view").is_visible() then
-						vim.cmd("NvimTreeClose")
-					end
-					vim.cmd("quit")
-				else
-					-- Otherwise just delete the buffer
-					bd.bufdelete(0, false)
-				end
-			end,
+		    local bd = require("bufdelete").bufdelete
+        bd(bufnum, false)
+      end,
 			desc = "Close Buffer",
 			silent = true,
 		},
