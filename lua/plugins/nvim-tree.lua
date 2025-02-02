@@ -14,4 +14,7 @@ return {
 			},
 		},
 	},
+  keys = {
+    { "<leader>e", "<cmd>lua require('nvim-tree.api').tree.toggle()<CR>" }
+  }
 }
