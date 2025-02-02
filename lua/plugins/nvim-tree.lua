@@ -14,13 +14,4 @@ return {
 			},
 		},
 	},
-	keys = {
-		{ "<leader>e", ":NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
-		{ "<C-h>", "<cmd>lua require('nvim-tree.api').tree.focus()<CR>", desc = "Focus NvimTree" },
-		{
-			"<C-l>",
-			"<cmd> lua if vim.bo.filetype == 'NvimTree' then vim.cmd('wincmd l') end<CR>",
-			desc = "Unfocus NvimTree",
-		},
-	},
 }
